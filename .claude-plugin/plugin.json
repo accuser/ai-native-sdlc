@@ -1,0 +1,8 @@
+{
+  "name": "ai-native-sdlc",
+  "version": "0.1.0",
+  "description": "Skills, commands, agents, and hooks that implement the AI-native SDLC playbook (intent -> spec -> plan -> build -> review -> deploy -> maintain) consistently across projects.",
+  "author": {
+    "name": "Matthew Gibbons"
+  }
+}

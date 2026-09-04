@@ -1,0 +1,15 @@
+# Response tiers for a closing-the-loop monitor. Detection stays entirely
+# deterministic (mean/stddev over a rolling baseline, Western Electric rules
+# or similar) — no model involved until 2sigma.
+metric: <e.g. ci_test_failure_rate | post_deploy_5xx_rate | pr_cycle_time>
+baseline: rolling_30d
+rules: western_electric
+tiers:
+  1sigma:
+    action: log
+  2sigma:
+    action: diagnose
+    tools: "Read,Grep,Bash(gh run view *)"
+  3sigma:
+    action: propose
+    routes: [pull_request, "runbook:rollback-deploy"]
