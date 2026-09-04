@@ -1,11 +1,11 @@
 # ai-native-sdlc
 
-A Claude Code plugin that operationalizes `playbook.md`: skills, commands, agents, and hooks for the six-stage AI-native SDLC (Plan, Design, Build, Test, Deploy, Maintain), meant to be installed once and reused across every project.
+A Claude Code plugin that operationalizes [the AI-Native SDLC playbook](https://claude.com/blog/the-ai-native-sdlc-playbook): skills, commands, agents, and hooks for the six-stage AI-native SDLC (Plan, Design, Build, Test, Deploy, Maintain), meant to be installed once and reused across every project.
 
 ## What's here, mapped to the playbook
 
 | Playbook play | Stage | Piece |
-|---|---|---|
+| --- | --- | --- |
 | Capture as intent.md | Plan | `skills/capture-intent`, `/intent` |
 | Requirements and design | Design | `skills/requirements-design`, `/spec` |
 | Plan mode as default starting point | Build | `skills/plan-from-spec`, `/plan` |
@@ -28,10 +28,12 @@ A Claude Code plugin that operationalizes `playbook.md`: skills, commands, agent
 This is a local, un-pushed directory (`git status` shows no repo here yet). Two ways to use it:
 
 **Option A — as a plugin (recommended for reuse across projects).** Push this directory to a git remote, then in any project:
-```
-/plugin marketplace add <this-repo-url-or-path>
+
+```plaintext
+/plugin marketplace add accuser/ai-native-sdlc
 /plugin install ai-native-sdlc
 ```
+
 That makes `/intent`, `/spec`, `/plan`, `/review-setup`, `/eval`, `/incident`, `/init` and the skills/agents available in every project without copying files.
 
 **Option B — copy directly.** Copy `skills/`, `commands/`, `agents/`, `hooks/` into a project's `.claude/` directory (Claude Code reads `.claude/skills/`, `.claude/commands/`, `.claude/agents/`; hooks need wiring through `.claude/settings.json` — see `hooks/settings.json.example`). Faster to start, but each project drifts independently — Option A keeps them in sync.
