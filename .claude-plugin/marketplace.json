@@ -1,0 +1,13 @@
+{
+  "name": "ai-native-sdlc",
+  "owner": {
+    "name": "Matthew Gibbons"
+  },
+  "plugins": [
+    {
+      "name": "ai-native-sdlc",
+      "source": "./",
+      "description": "Skills, commands, agents, and hooks that implement the AI-native SDLC playbook (intent -> spec -> plan -> build -> review -> deploy -> maintain) consistently across projects."
+    }
+  ]
+}
